@@ -1,4 +1,4 @@
-const scale = 1/2;
+const scale = 2/3;
 let fieldImg;
 let actions = [];
 let lastClick;
@@ -16,14 +16,15 @@ function addTime() {
     var endX = actions[actions.length-1].end.x;
     var endY = actions[actions.length-1].end.y;
 
-    var distT = sqrt((startX-endX)*(startX-endX) + (startY-endY)*(startY-endY)) * 54/1544;
+    var distT = sqrt((startX-endX)*(startX-endX) + (startY-endY)*(startY-endY)) * 54/(1544*scale);
 
     dist += distT;
     time += distT / speed;
 }
 
 function setup() {
-    var canvas = createCanvas(1544, 778);
+    var canvas = createCanvas(1544*scale, 778*scale);
+    canvas.parent("#canvasDiv");
 
     canvas.mouseClicked(() => {
         console.log("Click")
@@ -69,7 +70,7 @@ function keyPressed() {
 
 function draw() {
     background(0);
-    image(fieldImg, 0, 0);
+    image(fieldImg, 0, 0, width, height);
 
     fill(255,255,255);
     textSize(30);
