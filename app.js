@@ -108,7 +108,7 @@ function draw() {
 
     fill(255,255,255);
     textSize(30);
-    textBoxElem.innerHTML = "<h1>Cycle Time: "+Math.round(time * 100) / 100+"</h1><h1>Distance: "+Math.round(dist * 100) / 100+"</h1>";
+    textBoxElem.innerHTML = "<h2>Cycle Time: "+Math.round(time * 100) / 100+" (based on 11ft/s)</h2><h2>Distance: "+Math.round(dist * 100) / 100+"</h2>";
 
     if (actions.length > 0) {
         for (var i = 0; i < actions.length; i++) {

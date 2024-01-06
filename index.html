@@ -14,11 +14,22 @@
             align-items: center;
             font-family: Arial, Helvetica, sans-serif;
         }
+        h2 {
+            font-weight: normal; 
+        }
+        p {
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
     <div class="center">
         <h1>Pathing for FRC</h1>
+        <pre style="width: 2/3; margin-top: -1rem; margin-bottom: 1rem; text-align: center;">
+Instructions: Click to create paths. 
+For wait points, 1-9 create a 1-9 second wait at that location. 0 creates a 0.5 second wait.
+Type u to undo an action
+        </pre>
         <div id="canvasDiv"></div>
         <div id="resultsDiv"></div>
     </div>
