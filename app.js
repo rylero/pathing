@@ -4,7 +4,7 @@ let actions = [];
 let lastClick;
 let time = 0;
 let dist = 0;
-let speed = 1; // feet per second
+let speed = 11; // feet per second
 let textBoxElem;
 
 function preload() {
