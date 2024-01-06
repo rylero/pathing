@@ -126,6 +126,7 @@ function draw() {
             var a = actions[i];
             if (a.type == "line"){
                 stroke(255,255,255);
+                strokeWeight(2);
                 line(a.start.x, a.start.y, a.end.x, a.end.y);
             }
             else if (a.type == "wait") {
@@ -137,9 +138,12 @@ function draw() {
             }
         }
 
+        strokeWeight(2);
         line(actions[actions.length-1].end.x, actions[actions.length-1].end.y, mouseX, mouseY);
     } else if (lastClick) {
+        strokeWeight(2);
         stroke(255,255,255);
         line(lastClick.x, lastClick.y, mouseX, mouseY);
     }
+    strokeWeight(1);
 }
