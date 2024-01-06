@@ -89,6 +89,8 @@ function keyPressed() {
         if (actions.length >= 1) {
             if (actions[actions.length-1].type == "wait") {
                 time -= actions[actions.length-1].time;
+            } else {
+                addTime(-1);
             }
         }
         if (actions.length == 1) {
