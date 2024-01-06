@@ -1,4 +1,4 @@
-const scale = 2/3;
+let scale;
 let fieldImg;
 let actions = [];
 let lastClick;
@@ -10,6 +10,15 @@ let textBoxElem;
 function preload() {
     fieldImg = loadImage('field.png');
     textBoxElem = document.getElementById("resultsDiv");
+}
+
+function clamp(val, min, max) {
+    if (val < min) {
+        val = min;
+    } else if (val > max) {
+        val = max;
+    }
+    return val;
 }
 
 function addTime(mult) {
@@ -25,6 +34,8 @@ function addTime(mult) {
 }
 
 function setup() {
+    scale = clamp(window.innerWidth/1544, 0.1, 4/5);
+    console.log(scale)
     var canvas = createCanvas(1544*scale, 778*scale);
     canvas.parent("#canvasDiv");
 
