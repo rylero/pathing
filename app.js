@@ -121,12 +121,12 @@ function draw() {
     textSize(30);
     textBoxElem.innerHTML = "<h2>Cycle Time: "+Math.round(time * 100) / 100+" (based on 11ft/s)</h2><h2>Distance: "+Math.round(dist * 100) / 100+"</h2>";
 
+    strokeWeight(2.5);
     if (actions.length > 0) {
         for (var i = 0; i < actions.length; i++) {
             var a = actions[i];
             if (a.type == "line"){
                 stroke(255,255,255);
-                strokeWeight(2);
                 line(a.start.x, a.start.y, a.end.x, a.end.y);
             }
             else if (a.type == "wait") {
@@ -138,10 +138,8 @@ function draw() {
             }
         }
 
-        strokeWeight(2);
         line(actions[actions.length-1].end.x, actions[actions.length-1].end.y, mouseX, mouseY);
     } else if (lastClick) {
-        strokeWeight(2);
         stroke(255,255,255);
         line(lastClick.x, lastClick.y, mouseX, mouseY);
     }
